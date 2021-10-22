@@ -3,29 +3,60 @@
   <header>
 		<h1>The<strong>Anime</strong>Database</h1>
 
-		<form class="search-box">
+		<form class="search-box" @submit.prevent="HandleSearch">
 			<input 
 				type="search"
 				class="search-field"
-				placeholder="Search for an anime..." />
+				placeholder="Search for an anime..."
+				required 
+				v-model="search_query"/>
 		</form>
   </header>
-
+	<main>
+		<div class="cards">
+			<Card 
+				v-for="anime in animeList" 
+				:key="anime.mal_id" 
+				:anime="anime" />
+		</div>
+	</main>
 </div>
 </template>
 
 <script>
-export default {
+import { ref } from 'vue';	
+import Card from './components/Card.vue';
 
+export default {
+	setup() {
+		const search_query = ref("");
+		const animeList = ref([]);
+
+		const HandleSearch = async () => {
+			animeList.value = await fetch(`https://api.jikan.moe/v3/search/anime?q=${search_query.value}`)
+				.then(res => res.json())
+				.then(data => data.results);
+
+				console.log(animeList.value);
+		}
+		return {
+			search_query,
+			animeList,
+			HandleSearch
+		}
+	},
+	components: {
+		Card
+	},
 }
 </script>
+
 
 <style lang="scss">
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
 	font-family: 'Fira Sans', sans-serif;
 }
 
@@ -65,29 +96,40 @@ header {
 			background: none;
 			border: none;
 			outline: none;
-
-			background-color: #f3f3f3;
+			background-color: #F3F3F3;
 			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-
 			display: block;
 			width: 100%;
 			max-width: 600px;
 			padding: 15px;
 			border-radius: 8px;
-
 			color: #313131;
 			font-size: 20px;
-
 			transition: 0.4s;
 
 			&::placeholder {
 				color: #AAA;
 			}
 
-			&:hover {
+			&:focus, &:valid {
 				color: #FFF;
+				background-color: #313131;
+				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
 			}
 		}
+	}
+}
+
+main {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: 30px;
+	padding-right: 30px;
+
+	.cards {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -8px;
 	}
 }
 </style>
