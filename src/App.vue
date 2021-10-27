@@ -1,54 +1,15 @@
 <template>
 <div class="app">
-  <header>
-		<h1>The<strong>Anime</strong>Database</h1>
-
-		<form class="search-box" @submit.prevent="HandleSearch">
-			<input 
-				type="search"
-				class="search-field"
-				placeholder="Search for an anime..."
-				required 
-				v-model="search_query"/>
-		</form>
-  </header>
-	<main>
-		<div class="cards">
-			<Card 
-				v-for="anime in animeList" 
-				:key="anime.mal_id" 
-				:anime="anime" />
-		</div>
-	</main>
 </div>
+  <div id="nav">
+    <!-- <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> -->
+  </div>
+  <router-view/>
 </template>
 
 <script>
-import { ref } from 'vue';	
-import Card from './components/Card.vue';
 
-export default {
-	setup() {
-		const search_query = ref("");
-		const animeList = ref([]);
-
-		const HandleSearch = async () => {
-			animeList.value = await fetch(`https://api.jikan.moe/v3/search/anime?q=${search_query.value}`)
-				.then(res => res.json())
-				.then(data => data.results);
-
-				console.log(animeList.value);
-		}
-		return {
-			search_query,
-			animeList,
-			HandleSearch
-		}
-	},
-	components: {
-		Card
-	},
-}
 </script>
 
 
@@ -59,15 +20,12 @@ export default {
 	box-sizing: border-box;
 	font-family: 'Fira Sans', sans-serif;
 }
-
 a {
 	text-decoration: none;
 }
-
 header {
 	padding-top: 50px;
 	padding-bottom: 50px;
-
 	h1 {
 		color: #888;
 		font-size: 42px;
@@ -75,22 +33,18 @@ header {
 		text-align: center;
 		text-transform: uppercase;
 		margin-bottom: 30px;
-
 		strong {
 			color: #313131;
 		}
-
 		&:hover {
 			color: #313131;
 		}
 	}
-
 	.search-box {
 		display: flex;
 		justify-content: center;
 		padding-left: 30px;
 		padding-right: 30px;
-
 		.search-field {
 			appearance: none;
 			background: none;
@@ -106,11 +60,9 @@ header {
 			color: #313131;
 			font-size: 20px;
 			transition: 0.4s;
-
 			&::placeholder {
 				color: #AAA;
 			}
-
 			&:focus, &:valid {
 				color: #FFF;
 				background-color: #313131;
@@ -119,13 +71,11 @@ header {
 		}
 	}
 }
-
 main {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding-left: 30px;
 	padding-right: 30px;
-
 	.cards {
 		display: flex;
 		flex-wrap: wrap;
