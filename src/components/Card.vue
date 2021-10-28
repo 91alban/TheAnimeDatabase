@@ -1,14 +1,16 @@
 <template>
-    <div class="card">
-        <a :href="anime.url" target="_blank">
-            <img :src="anime.image_url" :alt="anime.title + ` Poster`">
-        </a>
-        <h3>{{ anime.title }}</h3>
-    </div>
+		<div class="card">
+	<router-link :to="{name: 'Profile', params: {id: anime.mal_id}}">
+			<!-- <a :href="anime.url" target="_blank"> -->
+				<img :src="anime.image_url" :alt="anime.title + ` Poster`">
+			<!-- </a> -->
+			<h3>{{ anime.title }}</h3>
+	</router-link>
+		</div>
 </template>
 <script>
 export default {
-    props: ['anime']
+    props: ['anime'], 
 }
 </script>
 

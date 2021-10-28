@@ -13,7 +13,7 @@
 import Card from '../components/Card.vue';
 
 export default {
-    
+    props: ['animeList'],
     setup() {
         
     },
