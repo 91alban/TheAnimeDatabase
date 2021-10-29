@@ -22,3 +22,17 @@ export default {
 	},
 }
 </script>
+
+<style lang="scss" scoped>
+main {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	.cards {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -12px;
+	}
+}
+</style>

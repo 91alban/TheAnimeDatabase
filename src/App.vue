@@ -1,10 +1,17 @@
 <template>
 <div class="app">
+	<div class="container">
+		<div id="navigation-bar">
+			<nav>
+				<ul>
+					<li><router-link to="/">Home</router-link></li>
+					<li><router-link to="/about">About</router-link></li>
+					<li><h1>The<strong>Anime</strong>Database</h1></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 </div>
-  <div id="nav">
-    <!-- <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> -->
-  </div>
   <router-view/>
 </template>
 
@@ -23,63 +30,49 @@
 a {
 	text-decoration: none;
 }
-header {
-	padding-top: 50px;
-	padding-bottom: 50px;
-	h1 {
+h1 {
 		color: #888;
 		font-size: 42px;
 		font-weight: 400;
 		text-align: center;
 		text-transform: uppercase;
+		margin-top: 30px;
 		margin-bottom: 30px;
 		strong {
-			color: #313131;
+			color: #ffffff;
 		}
 		&:hover {
-			color: #313131;
+			color: #ffffff;
 		}
 	}
-	.search-box {
-		display: flex;
-		justify-content: center;
-		padding-left: 30px;
-		padding-right: 30px;
-		.search-field {
-			appearance: none;
-			background: none;
-			border: none;
-			outline: none;
-			background-color: #F3F3F3;
-			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-			display: block;
-			width: 100%;
-			max-width: 600px;
-			padding: 15px;
-			border-radius: 8px;
-			color: #313131;
-			font-size: 20px;
-			transition: 0.4s;
-			&::placeholder {
-				color: #AAA;
-			}
-			&:focus, &:valid {
-				color: #FFF;
-				background-color: #313131;
-				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
-			}
-		}
-	}
+.container {
+  width: 100%;
+  display: inline-block;
 }
-main {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding-left: 30px;
-	padding-right: 30px;
-	.cards {
-		display: flex;
-		flex-wrap: wrap;
-		margin: 0 -8px;
+nav {
+	overflow: hidden;
+	background-color: #333;
+	position: relative;
+	top: 0;
+	width: 100%;
+	ul {
+		text-align: center;
+		list-style-type: none;
+		margin: 0;
+		padding: 15px;
+		li {
+			display: inline;
+			font-family: "Fira Sans", sans-serif;
+			font-size: 17px;
+			a {
+				color: #f2f2f2;
+				text-decoration: none;
+				padding: 14px;
+				&:hover {
+					background-color: #111;
+				}
+			}
+		}
 	}
 }
 </style>
