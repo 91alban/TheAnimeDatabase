@@ -1,16 +1,19 @@
 <template>
-  <div class="home">
+  <div class="home w-full antialiased">
     <header>
-
-    <form class="search-box" @click="SearchAnime" @submit.prevent="HandleSearch">
-		<input 
-            type="search"
-            class="search-field"
-            placeholder="Search for an anime..."
-            required 
-            v-model="search_query"/>
+		<div class="bg-indigo-600">
+    	<form class="search-box" @click="SearchAnime" @submit.prevent="HandleSearch">
+			<div class="relative flex items-center max-w-md mx-auto overflow-hidden text-center mb-5">
+				<input 
+					type="search"
+					class="w-full h-12 px-6 py-2 font-medium text-indigo-800 focus:outline-none border-gray-900"
+					placeholder="Search for an anime..."
+					required 
+					v-model="search_query"/>
+			</div>
 		</form>
-</header>
+		</div>
+	</header>
     <MainBody 
 			:animeList="animeList"
     />

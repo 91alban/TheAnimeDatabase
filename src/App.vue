@@ -1,11 +1,11 @@
 <template>
 <div class="app">
-	<div id="navigation-bar ">
-		<nav class="bg-gray-100">
-			<div class="px-8 mx-auto">
-				<div class="flex justify-around">
+	<div id="navigation-bar">
+		<nav class="bg-indigo-600">
+			<div class="p-8 mx-auto">
+				<div class="flex justify-around items-center text-white">
 					<router-link to="/">Home</router-link>
-					<a href="/"><h1>The<strong>Anime</strong>Database</h1></a>
+					<a href="/"><h1 class="hover:text-white text-4xl">The<strong>Anime</strong>Database</h1></a>
 					<router-link to="/about">About</router-link>
 				</div> 
 			</div>
