@@ -45,39 +45,39 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-header {
-	padding-bottom: 50px;
+// <style lang="scss" scoped>
+// header {
+// 	padding-bottom: 100px;
 	
-	.search-box {
-		display: flex;
-		justify-content: center;
-		padding-left: 30px;
-		padding-right: 30px;
-		.search-field {
-			appearance: none;
-			background: none;
-			border: none;
-			outline: none;
-			background-color: #F3F3F3;
-			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-			display: block;
-			width: 100%;
-			max-width: 600px;
-			padding: 15px;
-			border-radius: 8px;
-			color: #313131;
-			font-size: 20px;
-			transition: 0.4s;
-			&::placeholder {
-				color: #AAA;
-			}
-			&:focus, &:valid {
-				color: #FFF;
-				background-color: #313131;
-				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
-			}
-		}
-	}
-}
-</style>
+// 	.search-box {
+// 		display: flex;
+// 		justify-content: center;
+// 		padding-left: 30px;
+// 		padding-right: 30px;
+// 		.search-field {
+// 			appearance: none;
+// 			background: none;
+// 			border: none;
+// 			outline: none;
+// 			background-color: #F3F3F3;
+// 			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+// 			display: block;
+// 			width: 100%;
+// 			max-width: 600px;
+// 			padding: 15px;
+// 			border-radius: 8px;
+// 			color: #313131;
+// 			font-size: 20px;
+// 			transition: 0.4s;
+// 			&::placeholder {
+// 				color: #AAA;
+// 			}
+// 			&:focus, &:valid {
+// 				color: #FFF;
+// 				background-color: #313131;
+// 				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+// 			}
+// 		}
+// 	}
+// }
+// </style>
