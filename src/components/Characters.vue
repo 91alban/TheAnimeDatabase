@@ -8,7 +8,7 @@
 
         <div class="relative px-16 mx-auto max-w-7xl">
             <p class="font-medium tracking-wide text-blue-500 uppercase">{{ anime.title }} Characters</p>
-            <h2 class="relative max-w-lg mt-5 mb-10 text-4xl font-semibold leading-tight lg:text-5xl">An incredible team of <br>amazing individuals</h2>
+            <h2 class="relative max-w-lg mt-5 mb-10 text-4xl font-semibold leading-tight lg:text-5xl">The incredible characters <br>on this show.</h2>
                 <div class="grid w-full grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-4">
             <div v-for="character in characters.characters"
                 :key="character.mal_id"
